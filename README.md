@@ -18,12 +18,12 @@ This repository contains the code and pre-trained models for our EMNLP'22 paper 
 
 ## Overview
 
-Domain-adaptive pre-training (or DA-training for short), also known as post-training, aims to train a pre-trained general-purpose language model (LM) using an unlabeled corpus of a particular domain to adapt the LM so that endtasks in the domain can give improved performances. However, existing DA-training methods are in some sense blind as they do not explicitly identify what knowledge in the LM should be preserved and what should be changed by the domain corpus. This paper shows that the existing methods are suboptimal and proposes a novel method to perform a more informed adaptation of the knowledge in the LM by (1) soft-masking the attention heads based on their importance to best preserve the general knowledge in the LM and (2) contrasting the representations of the general and the full (both general and domain knowledge) to learn an integrated representation with both general and domain-specific knowledge. Experimental results will demonstrate the effectiveness of the proposed approach.
+Domain-adaptive pre-training (or DA-training for short), also known as post-training, aims to train a pre-trained general-purpose language model (LM) using an unlabeled corpus of a particular domain to adapt the LM so that endtasks in the domain can give improved performances. However, existing DA-training methods are in some sense blind as they do not explicitly identify what knowledge in the LM should be preserved and what should be changed by the domain corpus. This paper shows that the existing methods are suboptimal and proposes a novel method to perform a more informed adaptation of the knowledge in the LM by (1) soft-masking the attention heads based on their importance to best preserve the general knowledge in the LM and (2) contrasting the representations of the general and the full (both general and domain knowledge) to learn an integrated representation with both general and domain-specific knowledge. Experimental results demonstrate the effectiveness of the proposed approach.
 
 <p align="center">
     <br>
     <a href="https://github.com/UIC-Liu-Lab/DGA">
-        <img src="https://github.com/ZixuanKe/PyContinual/blob/figures/model.png" width="500"/>
+        <img src="https://github.com/UIC-Liu-Lab/DGA/blob/main/figures/model.png" width="500"/>
     </a>    
     <br>
 <p>
@@ -99,13 +99,13 @@ Arguments for the end-task fine-tuning script are as follows,
 
 * `--pt_task`: The id for the post-train task. e.g. `--pt_task 3` means using the model after continually post-trained on the four datasets. 
 * `ft_task`: The id for the fine-tuning task. e.g. `--ft_task 0` means doing fine-tuning on the first dataset.
-* `--idrandom`: choose the task sequence. See `./sequence` for more details.
+* `--idrandom`: choose the task sequence. See `sequence_10` for more details.
   * You can post-train DGA using other task sequences by modifying this argument.
 * `--pt_seed`: the seed used for post-training, used to find the right checkpoint dir of post-trained models.
 * `--unfreeze_lm`: whether to unfreeze the backbone (Roberta) when fine-tuning.
 
 ## Bugs or questions?
-If you have any questions related to the code or the paper, feel free to email [Zixuan](`zke4@uic.edu`), [Yijia](shaoyj.pku.edu.cn), and [Haowei](`linhaowei@pku.edu.cn`), and . If you encounter any problems when using the code, or want to report a bug, you can open an issue. Please try to specify the problem with details so we can help you better and quicker!
+If you have any questions related to the code or the paper, feel free to email [Zixuan](`zke4@uic.edu`), [Yijia](shaoyj.pku.edu.cn), and [Haowei](`linhaowei@pku.edu.cn`). If you encounter any problems when using the code, or want to report a bug, you can open an issue. Please try to specify the problem with details so we can help you better and quicker!
 
 ## Acknowledgement
 This codebase is adapted from [CPT](https://github.com/UIC-Liu-Lab/CPT) and [PyContinual](https://github.com/ZixuanKe/PyContinual).
@@ -115,7 +115,7 @@ This codebase is adapted from [CPT](https://github.com/UIC-Liu-Lab/CPT) and [PyC
 Please cite our paper if you use DGA in your work:
 
 ```bibtex
-@inproceedings{ke2022continual,
+@inproceedings{ke2022dga,
    title={Adapting a Language Model While Preserving its General Knowledge},
    author={Ke, Zixuan and Shao, Yijia and Lin, Haowei and Xu, Hu and Shu, Lei, and Liu, Bing},
    booktitle={Empirical Methods in Natural Language Processing (EMNLP)},
