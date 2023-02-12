@@ -7,8 +7,8 @@ This repository contains the code and pre-trained models for our EMNLP'22 paper 
 
   - [Overview](#overview)
   - [Requirements](#requirements)
-  - [Use DGA with Huggingface](#use-cpt-with-huggingface)
-  - [Train DGA](#train-cpt)
+  - [Use DGA with Huggingface](#use-dga-with-huggingface)
+  - [Train DGA](#train-dga)
     - [Data](#data)
     - [Post-Training](#post-training)
     - [End-Task Fine-tuning](#end-task-fine-tuning)
@@ -23,7 +23,7 @@ Domain-adaptive pre-training (or DA-training for short), also known as post-trai
 <p align="center">
     <br>
     <a href="https://github.com/UIC-Liu-Lab/DGA">
-        <img src="https://github.com/UIC-Liu-Lab/DGA/blob/main/figures/model.png" width="500"/>
+        <img src="https://github.com/UIC-Liu-Lab/DGA/blob/main/figures/model.png" width="300"/>
     </a>    
     <br>
 <p>
@@ -78,7 +78,7 @@ We provide an example training script to run DGA. We explain the arguments in th
   * Actually, our codebase is very flexible for adding more baselines. We will add more baselines in the future.
 
 
-All the other arguments are standard Huggingface's `transformers` training arguments. Some of the often-used arguments are: `--max_seq_length`, `--learning_rate`, `--per_device_train_batch_size`. In our example scripts, we also set to train and evaluate the model on the `cpt_datasets_pt` and `cpt_datasets_ft` sequence files. See `./sequence` for details.
+All the other arguments are standard Huggingface's `transformers` training arguments. Some of the often-used arguments are: `--max_seq_length`, `--learning_rate`, `--per_device_train_batch_size`. See `./sequence_10` for details.
 
 For the results in the paper, we use Nvidia GeForce RTX2080 GPUs with CUDA 10. Using different types of devices or different versions of CUDA/other software may lead to slightly different performance.
 
